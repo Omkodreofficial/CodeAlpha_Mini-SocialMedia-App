@@ -1,0 +1,241 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #f8f9fa;
+  --card: #ffffff;
+  --text: #212529;
+  --muted: #6c757d;
+  --border: #e9ecef;
+  --brand: #00a79d;
+  --like: #e0245e;
+}
+
+/* Dark theme variables */
+.dark {
+  --bg: #0f1112; /* page background */
+  --card: #151515; /* card bg */
+  --text: #e1e1e1;
+  --muted: #9aa0a6;
+  --border: #242424;
+  --brand: #00a79d;
+  --like: #ff6b88;
+}
+
+/* Apply background and text defaults */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, sans-serif;
+}
+
+/* Card Styling uses CSS variables */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  color: var(--text);
+}
+
+/* Smooth hover transitions */
+.hover-card {
+  transition: all 0.2s ease;
+}
+.hover-card:hover {
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+/* Make Tailwind's common classes adapt in dark mode where we didn't add variants */
+.dark .bg-white {
+  background-color: var(--card) !important;
+}
+.dark .text-gray-500 {
+  color: var(--muted) !important;
+}
+.dark .text-gray-600 {
+  color: var(--muted) !important;
+}
+.dark .text-gray-700 {
+  color: var(--text) !important;
+}
+.dark .border-bordergray {
+  border-color: var(--border) !important;
+}
+.dark .bg-offwhite {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Buttons */
+button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+/* ===== Add these to the bottom of index.css ===== */
+
+:root {
+  --var-bg: #f8f9fa;
+  --var-card: #ffffff;
+  --var-text: #212529;
+  --var-muted: #6c757d;
+  --var-border: #e9ecef;
+  --var-brand: #00a79d;
+  --var-like: #e0245e;
+}
+
+/* map nicer names for JS usage */
+:root {
+  --var-card: var(--card, #ffffff);
+}
+
+/* Provide CSS custom properties used in components */
+.dark {
+  --var-bg: #0f1112;
+  --var-card: #151515;
+  --var-text: #e1e1e1;
+  --var-muted: #9aa0a6;
+  --var-border: #242424;
+  --var-brand: #00a79d;
+  --var-like: #ff6b88;
+}
+
+/* variables exposed with friendly names for JS usage (class names used above) */
+:root {
+  --brand: var(--var-brand);
+  --card: var(--var-card);
+  --border: var(--var-border);
+}
+
+.dark {
+  --brand: var(--var-brand);
+}
+
+/* Input base class to make all inputs consistent */
+.input-base {
+  background: var(--card);
+  color: var(--var-text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.5rem;
+}
+
+/* Dark adjustments for some Tailwind classes we couldn't convert */
+.dark .bg-white {
+  background-color: var(--card) !important;
+}
+.dark .border-bordergray {
+  border-color: var(--border) !important;
+}
+.dark .bg-offwhite {
+  background-color: rgba(255, 255, 255, 0.02) !important;
+}
+/* ===== Design system variables ===== */
+:root {
+  --brand: #00a79d;
+  --bg: #f8f9fa;
+  --card: #ffffff;
+  --text: #212529;
+  --muted: #6c757d;
+  --border: #e9ecef;
+  --like: #e0245e;
+
+  /* Button paddings are handled by Button.jsx sizes */
+}
+
+.dark {
+  --bg: #121212;
+  --card: #1e1e1e;
+  --text: #e1e1e1;
+  --muted: #9aa0a6;
+  --border: #343a40;
+  --like: #ff6b88;
+  --brand: #00a79d;
+}
+
+/* Page */
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial;
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+  padding: 16px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+}
+
+/* Headings unified */
+.h-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Brand color reserved for interactive elements */
+.text-brand {
+  color: var(--brand);
+}
+
+/* Inputs */
+.input {
+  background: var(--card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 10px 12px;
+}
+
+/* Small helpers */
+.bg-offwhite {
+  background: #f8f9fa;
+}
+.dark .bg-offwhite {
+  background: rgba(255, 255, 255, 0.02) !important;
+}
+
+/* Button utility fallback class names (in case components use them) */
+.btn-primary {
+  background: var(--brand);
+  color: white;
+  border-radius: 9999px;
+  padding: 12px 24px;
+  font-weight: 600;
+}
+.btn-secondary {
+  background: var(--card);
+  color: var(--text);
+  border-radius: 9999px;
+  padding: 8px 16px;
+  font-weight: 600;
+  border: 1px solid var(--border);
+}
+.dark .btn-secondary {
+  background: #1e1e1e;
+  color: #ffffff;
+  border: 1px solid var(--muted);
+}
+
+/* Ensure some Tailwind classes adapt to dark variables */
+.dark .border-bordergray {
+  border-color: var(--border) !important;
+}
+.dark .text-gray-500 {
+  color: var(--muted) !important;
+}
+.h-title { font-size: 20px; font-weight: 600; color: var(--text); }
